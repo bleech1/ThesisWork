@@ -1,0 +1,25 @@
+***   When you are to type commands, the commands are in between quotes ""  ***
+*** You do not need to type the quotes themselves and press ENTER when done ***
+
+
+1. Download the zip file: bleech_thesis.zip
+2. Open Terminal (click on the magnifying glass in the top right and type 
+    terminal then press ENTER)
+3. Type "cd ~/Downloads"
+4. Type "unzip bleech_thesis.zip"
+    If this gives you an error saying that it cannot find or open the file,
+    then your computer probably unzipped the file when you downloaded it, so 
+    continue to the next step.  If step 5 does not work, then try to re-download
+    the zip file into the Downloads folder.
+5. Type "cd bleech_thesis"
+6. Type "mv * ~"
+7. Type "cd ~"
+8. Type "chmod +x mac-script.sh"
+9. Type "sudo ./mac-script.sh"
+10. Type in your password when prompted then press enter.  Your password will 
+    not appear as you type but a 0 will appear after you press enter if it
+    is correct.
+11. Please leave terminal open until the program finishes.  It will print out 
+    "The file has been uploaded correctly" when complete.  Until then, feel
+    free to minimize terminal and use your computer normally, just please do
+    not close terminal.

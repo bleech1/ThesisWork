@@ -1,0 +1,9 @@
+NeedSources/*
+ThesisPaper/*
+cs-thesis-template/*
+latex/*
+prestuff/*
+readPipes/*
+research/*
+*.DS_Store
+*settings.json

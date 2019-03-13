@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{outline}
+
+\title{Examining the Security of Local Inter-Process Communication}
+\author{Brendan Leech}
+\date{Advised by Prof. Peter C. Johnson}
+
+\begin{document}
+
+\maketitle
+
+\begin{outline}
+    \item {Abstract}
+    \begin{itemize}
+        \item {Many applications have more than one process running}
+        \item {They communicate over local IPC (completely within the machine)}
+        \item {This communication has been shown to have vulnerabilities}
+        \item {This thesis will look at commonly-used applications to find what, if any, security issues can be found.}
+    \end{itemize}
+    \item {Introduction}
+    \begin{itemize}
+        \item {Many modern applications are split into multiple processes}
+        \item {This helps to separate functionality, so that each individual process can do its specific job}
+        \item {However, for these processes to work together, they need to be able to communicate}
+        \item {This communication has been shown to be insecure}
+        \item {Since the communication never leaves the physical machine, an attacker would need to have access to the computer}
+        \item {Many computers have guest accounts, and there are ways to keep programs running after a user has logged out (nohup and fast-user switching)}
+        \item {Therefore, an attacker could start a malicious program and logout, without the victim having any idea that their machine has been compromised}
+        \item Plan of the Thesis
+        \begin{itemize}
+            \item Create survey to find commonly-used applications and their local IPC footprints
+            \item Using the results, find ``interesting" programs to study
+            \item Use fuzzing software and tools to examine the communication to try and find vulnerabilities
+            \item Fuzzing can find crashes
+            \item Studying the communication can find ways to steal information or hijack execution
+        \end{itemize}
+    \end{itemize}
+    \item {Background}
+    \begin{outline}
+        \item {Inter-Process Communication}
+        \begin{outline}
+            \item What is IPC
+            \begin{itemize}
+                \item IPC is the way that any two programs communicate with each other
+                \item Broadly speaking, everything from email, to webpages, to Spotify, uses IPC
+                \item The most common form people know is internet communication, which allows separate computers to connect
+            \end{itemize}
+            \item Local IPC
+            \begin{itemize}
+                \item This communication occurs entirely within one computer
+                \item Since it stays within the computer, many times the overhead required to communicate between computers can be avoided
+                \item This can make the communication significantly faster
+                \item Because applications are split into multiple processes, they also much communicate sensitive data
+                \item Since its within one machine, some security experts believe it is not worth trying to encrypt (CITATION NEEDED)
+                \item However, many programs make an effort to encrypt it, but do a worse job than with their networked communication
+            \end{itemize}
+            \item Forms of Local IPC
+            \begin{outline}
+                \item Communication to localhost
+                \begin{outline}
+                    \item How does this work (explain full network stack)
+                    \item Why is localhost useful
+                \end{outline}
+                \item UNIX Domain Sockets
+                \begin{outline}
+                    \item How does this work
+                    \item How is this different from localhost
+                    \item What are the tradeoffs between localhost and these
+                \end{outline}
+                \item Named Pipes
+                \begin{outline}
+                    \item How does these work
+                    \item What are the benefits over localhost/UNIX domain sockets
+                    \item Differences between these and anonymous pipes
+                \end{outline}
+            \end{outline}
+            \item Local IPC Vulnerabilities
+            \begin{itemize}
+                \item Discuss how local IPC is sometimes ignored, or at the very least, secured to a lesser extent than networked communication
+                \item Vulnerabilities in named pipes
+                \item Poor encryption that allows listeners to steal information
+            \end{itemize}
+        \end{outline}
+        \item Fuzzing
+        \begin{outline}
+            \item What is fuzzing
+            \begin{itemize}
+                \item Sending random or semi-random input to a process to try and induce a crash
+                \item Try to cause undesired behavior by the program
+                \item This can be done by the authors, or by third parties
+                \item Why either side would want to do it
+            \end{itemize}
+            \item The fuzzers I am using
+            \begin{itemize}
+                \item Radamsa
+                \item Sulley
+                \item afl
+                \item What makes them different from each other
+            \end{itemize}
+        \end{outline}
+        \item How to see local IPC
+        \begin{outline}
+            \item For localhost - Wireshark
+            \item For UNIX domain sockets - sniff the packets as they are sent or modify kernel functions to send messages to another location as well
+            \item For named pipes - join the pipe as a reader
+        \end{outline}
+    \end{outline}
+    \item Results
+    \begin{outline}
+        \item Application 1
+        \begin{itemize}
+            \item How does IPC work for this application?
+            \item What did we learn from studying communication?
+            \item What did we learn from fuzzing?
+        \end{itemize}
+        \item Application 2
+        \begin{itemize}
+            \item How does IPC work for this application?
+            \item What did we learn from studying communication?
+            \item What did we learn from fuzzing?
+        \end{itemize}
+        \item Application 3
+        \begin{itemize}
+            \item How does IPC work for this application?
+            \item What did we learn from studying communication?
+            \item What did we learn from fuzzing?
+        \end{itemize}
+    \end{outline}
+    \item Future Work
+    \begin{itemize}
+        \item What can be done to avoid these security issues in the future?
+        \item Would these changes be difficult to complete?
+    \end{itemize}
+    \item Discussion
+    \begin{itemize}
+        \item We have found X bugs/vulnerabilities in these applications that use local IPC
+        \item These bugs are due to: careless programming and unknown attack vectors
+        \item They can be fixed in the future with two-way authentication or an air gap
+    \end{itemize}
+    \item Acknowledgements
+\end{outline}
+
+\nocite{*}
+\bibliographystyle{plainurl}
+\bibliography{references}
+
+\end{document}
