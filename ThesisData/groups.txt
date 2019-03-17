@@ -25,6 +25,8 @@ com.apple.Safari.SafeBrowsing.S
 com.apple.Safari.SandboxBroker
 com.apple.Safari.SearchHelper
 SafariCloudHistoryPushAgent
+com.apple.WebKit.Networking
+com.apple.WebKit.WebContent
 
 R
 RStudio
@@ -118,6 +120,7 @@ com.apple.AddressBook.FaceTimeS
 CREATIVE CLOUD
 Core\x20Sync
 Creative\x20Cloud
+Adobe\x20Desktop\x20Service
 
 CORE SERVICES
 CoreServicesUIAgent
@@ -138,3 +141,15 @@ SpotlightNetHelper
 CARBONITE
 CarboniteDaemon
 CarboniteStatus
+
+ICON SERVICES
+iconservicesagent
+iconservicesd
+
+RDR CEF
+RdrCEF
+RdrCEF\x20Helper
+
+SPINDUMP
+spindump
+spindump_agent
