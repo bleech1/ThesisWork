@@ -8,17 +8,22 @@ import sys
 # Filenames that we are going to look at
 FILE_PREFIX = "../ThesisData/"
 FIFO = "FifosCount.txt"
+FIFO_DATA = "aConnFifos.txt"
 PIPE = "PipesCount.txt"
+PIPE_DATA = "aConnPipes.txt"
 TCP = "TcpConnsCount.txt"
+TCP_DATA = "aTcpConns.txt"
 UDP = "UdpConnsCount.txt"
+UDP_DATA = "aUdpConns.txt"
 UNIX = "UnixSocketsCount.txt"
+UNIX_DATA = "aConnUnixSockets.txt"
 DIRECTORY = "ipcFiles/"
 RESULTS = FILE_PREFIX + "results.txt"
 GROUP_FILE = FILE_PREFIX + "groups.txt"
 GROUPED_RESULTS = FILE_PREFIX + "grouped_results.txt"
 
 # Read the file and add contents to dicts
-def ReadFile(filename, avgDict, appNames):
+def ReadCountFile(filename, avgDict, appNames):
     try:
         with open(filename, "r") as infile:
             for line in infile:
@@ -34,6 +39,42 @@ def ReadFile(filename, avgDict, appNames):
                     avgDict[appName] += [int(numTimes)]
                 else:
                     avgDict[appName] = [int(numTimes)]
+    except FileNotFoundError:
+        return
+
+# Find first non-numeric character
+def FindCharacter(string):
+    for i in range(len(string)):
+        if string[i].isnumeric():
+            continue
+        return i
+
+# Read the details file to find users
+def ReadDetailFile(filename, usersDict):
+    try:
+        with open(filename, "r") as data:
+            for line in data:
+                # Ignore empty lines
+                if not line.strip():
+                    continue
+                # Column 3 normally has user
+                # Sometimes column 2 is PID/user combined because of formatting
+                splitLine = line.split()
+                length = len(splitLine)
+                if length < 3:
+                    continue
+                process = splitLine[0]
+                pid = splitLine[1]
+                if pid.isnumeric():
+                    user = splitLine[2]
+                else:
+                    index = FindCharacter(pid)
+                    user = pid[index:]
+                if process in usersDict.keys():
+                    usersDict[process].add(user)
+                else:
+                    usersDict[process] = set()
+                    usersDict[process].add(user)
     except FileNotFoundError:
         return
 
@@ -119,13 +160,14 @@ def CreateGroupData(dicts, groups, procInGroup):
     avgTcp = dicts[3]
     avgUdp = dicts[4]
     avgUnix = dicts[5]
+    users = dicts[6]
     # New dict where key is process (or group title)
     # Value is a list: # machines, fifos, pipes, tcp, udp, unix
     # Each item in list is a list of the values, so we can average
     groupData = dict()
     # Initialize with empty keys for each group name
     for item in groups.keys():
-        groupData[item] = [[], [], [], [], [], []]
+        groupData[item] = [[], [], [], [], [], [], []]
     # For each process, add it to groupData if not part of a group
     # If part of a group, add it there to be averaged later
     for item in appsUsed.keys():
@@ -142,7 +184,8 @@ def CreateGroupData(dicts, groups, procInGroup):
         if item not in avgUnix.keys():
             avgUnix[item] = 0
         if item not in procInGroup:
-            groupData[item] = [appsUsed[item], avgFifos[item], avgPipes[item], avgTcp[item], avgUdp[item], avgUnix[item]]
+            groupData[item] = [appsUsed[item], avgFifos[item], avgPipes[item], avgTcp[item], avgUdp[item], avgUnix[item], users[item]]
+            groupData[item][6] = ", ".join(groupData[item][6])
         else:
             # Find what group it should be in
             targetGroup = FindGroup(groups, item)
@@ -152,7 +195,8 @@ def CreateGroupData(dicts, groups, procInGroup):
             groupData[targetGroup][3].append(avgTcp[item])
             groupData[targetGroup][4].append(avgUdp[item])
             groupData[targetGroup][5].append(avgUnix[item])
-    # For the groups, average their results
+            groupData[targetGroup][6].append(users[item])
+    # For the groups, total their results
     for item in groups.keys():
         group = groupData[item]
         groupData[item][0] = max(group[0])
@@ -161,6 +205,8 @@ def CreateGroupData(dicts, groups, procInGroup):
         groupData[item][3] = sum(group[3])
         groupData[item][4] = sum(group[4])
         groupData[item][5] = sum(group[5])
+        groupData[item][6] = set.union(*group[6])
+        groupData[item][6] = ", ".join(groupData[item][6])
     return groupData
 
 
@@ -170,10 +216,10 @@ def WriteGroupFile(dicts):
     groupData = CreateGroupData(dicts, groups, procInGroup)
     procAlpha = sorted(groupData.keys(), key = lambda s: s.casefold())
     with open(GROUPED_RESULTS, "w") as groupFile:
-        groupFile.write(f"{'APP NAME':40}{'NUM MACHINES':12}{'AVG FIFOS':12}{'AVG PIPES':12}{'AVG TCP':12}{'AVG UDP':12}{'AVG UNIX':12}\n")
+        groupFile.write(f"{'APP NAME':40}{'   NUM MACHINES':15}{'   AVG FIFOS':12}{'   AVG PIPES':12}{'     AVG TCP':12}{'     AVG UDP':12}{'    AVG UNIX':12}{'     USERS'}\n")
         for proc in procAlpha:
             item = groupData[proc]
-            groupFile.write(f"{proc:40}{item[0]:12}{item[1]:12}{item[2]:12}{item[3]:12}{item[4]:12}{item[5]:12}\n")
+            groupFile.write(f"{proc:40}{item[0]:15.0f}{item[1]:12.0f}{item[2]:12.0f}{item[3]:12.0f}{item[4]:12.0f}{item[5]:12.0f}{'     '+ item[6]}\n")
 
 
 
@@ -202,6 +248,7 @@ udp = dict()
 avgUdp = dict()
 unix = dict()
 avgUnix = dict()
+users = dict()
 
 for filename in zips:
     userCount += 1
@@ -211,12 +258,17 @@ for filename in zips:
 
     # Read through the files and collect statistics
     appNames = set()
-    ReadFile(DIRECTORY + number + "." + FIFO, fifos, appNames)
-    ReadFile(DIRECTORY + number + "." + PIPE, pipes, appNames)
-    ReadFile(DIRECTORY + number + "." + TCP, tcp, appNames)
-    ReadFile(DIRECTORY + number + "." + UDP, udp, appNames)
-    ReadFile(DIRECTORY + number + "." + UNIX, unix, appNames)
+    ReadCountFile(DIRECTORY + number + "." + FIFO, fifos, appNames)
+    ReadCountFile(DIRECTORY + number + "." + PIPE, pipes, appNames)
+    ReadCountFile(DIRECTORY + number + "." + TCP, tcp, appNames)
+    ReadCountFile(DIRECTORY + number + "." + UDP, udp, appNames)
+    ReadCountFile(DIRECTORY + number + "." + UNIX, unix, appNames)
     CountAppearances(appNames, appsUsed)
+    ReadDetailFile(DIRECTORY + number + "." + FIFO_DATA, users)
+    ReadDetailFile(DIRECTORY + number + "." + PIPE_DATA, users)
+    ReadDetailFile(DIRECTORY + number + "." + TCP_DATA, users)
+    ReadDetailFile(DIRECTORY + number + "." + UDP_DATA, users)
+    ReadDetailFile(DIRECTORY + number + "." + UNIX_DATA, users)
 
     # Remove the unzipped directory
     subprocess.run(["rm", "-r", "ipcFiles"])
@@ -272,5 +324,5 @@ if os.path.exists(GROUPED_RESULTS):
 
 subprocess.run(["touch", GROUPED_RESULTS])
 
-dicts = [appsUsed, avgFifos, avgPipes, avgTcp, avgUdp, avgUnix]
+dicts = [appsUsed, avgFifos, avgPipes, avgTcp, avgUdp, avgUnix, users]
 WriteGroupFile(dicts)
