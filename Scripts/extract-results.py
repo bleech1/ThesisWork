@@ -4,6 +4,7 @@ import glob
 import subprocess
 import os
 import sys
+import re
 
 # Filenames that we are going to look at
 FILE_PREFIX = "../ThesisData/"
@@ -75,6 +76,50 @@ def ReadDetailFile(filename, usersDict):
                 else:
                     usersDict[process] = set()
                     usersDict[process].add(user)
+    except FileNotFoundError:
+        return
+
+# Filter data to get localhost stuff
+def FilterResults(filename, localDict):
+    v4Local = "127.0.0.1"
+    v6Local = "[::1]"
+    anyAddr = "*:*"
+    anyPort = r"\*:[0-9]+"
+    try:
+        with open(filename, "r") as data:
+            seenThisTime = set()
+            for line in data:
+                contains = False
+                # empty line, continue
+                if not line.strip():
+                    seenThisTime.clear()
+                    continue
+                # first line, skip
+                if "COMMAND" in line:
+                    seenThisTime.clear()
+                    continue
+                splitLine = line.split()
+                process = splitLine[0]
+                if (v4Local in line) or (v6Local in line) or (anyAddr in line):
+                    # contains a localhost address
+                    contains = True
+                if re.search(anyPort, line):
+                    # listening on any address, specific port
+                    contains = True 
+
+                if process not in localDict.keys():
+                    localDict[process] = []
+                if not contains:
+                    localDict[process].append(0)
+                    continue
+
+                # must be listening on any address or localhost
+                if process not in seenThisTime:
+                    localDict[process].append(1)
+                    seenThisTime.add(process)
+                else:
+                    localDict[process][-1] += 1
+                
     except FileNotFoundError:
         return
 
@@ -161,13 +206,15 @@ def CreateGroupData(dicts, groups, procInGroup):
     avgUdp = dicts[4]
     avgUnix = dicts[5]
     users = dicts[6]
+    tcpLocal = dicts[7]
+    udpLocal = dicts[8]
     # New dict where key is process (or group title)
-    # Value is a list: # machines, fifos, pipes, tcp, udp, unix
+    # Value is a list: # machines, fifos, pipes, tcp, udp, unix, users, local TCP, local UDP
     # Each item in list is a list of the values, so we can average
     groupData = dict()
     # Initialize with empty keys for each group name
     for item in groups.keys():
-        groupData[item] = [[], [], [], [], [], [], []]
+        groupData[item] = [[], [], [], [], [], [], [], [], []]
     # For each process, add it to groupData if not part of a group
     # If part of a group, add it there to be averaged later
     for item in appsUsed.keys():
@@ -183,8 +230,12 @@ def CreateGroupData(dicts, groups, procInGroup):
             avgUdp[item] = 0
         if item not in avgUnix.keys():
             avgUnix[item] = 0
+        if item not in tcpLocal.keys():
+            tcpLocal[item] = 0
+        if item not in udpLocal.keys():
+            udpLocal[item] = 0
         if item not in procInGroup:
-            groupData[item] = [appsUsed[item], avgFifos[item], avgPipes[item], avgTcp[item], avgUdp[item], avgUnix[item], users[item]]
+            groupData[item] = [appsUsed[item], avgFifos[item], avgPipes[item], avgTcp[item], avgUdp[item], avgUnix[item], users[item], tcpLocal[item], udpLocal[item]]
             groupData[item][6] = ", ".join(groupData[item][6])
         else:
             # Find what group it should be in
@@ -196,6 +247,8 @@ def CreateGroupData(dicts, groups, procInGroup):
             groupData[targetGroup][4].append(avgUdp[item])
             groupData[targetGroup][5].append(avgUnix[item])
             groupData[targetGroup][6].append(users[item])
+            groupData[targetGroup][7].append(tcpLocal[item])
+            groupData[targetGroup][8].append(udpLocal[item])
     # For the groups, total their results
     for item in groups.keys():
         group = groupData[item]
@@ -207,6 +260,8 @@ def CreateGroupData(dicts, groups, procInGroup):
         groupData[item][5] = sum(group[5])
         groupData[item][6] = set.union(*group[6])
         groupData[item][6] = ", ".join(groupData[item][6])
+        groupData[item][7] = sum(group[7])
+        groupData[item][8] = sum(group[8])
     return groupData
 
 
@@ -216,10 +271,13 @@ def WriteGroupFile(dicts):
     groupData = CreateGroupData(dicts, groups, procInGroup)
     procAlpha = sorted(groupData.keys(), key = lambda s: s.casefold())
     with open(GROUPED_RESULTS, "w") as groupFile:
-        groupFile.write(f"{'APP NAME':40}{'   NUM MACHINES':15}{'   AVG FIFOS':12}{'   AVG PIPES':12}{'     AVG TCP':12}{'     AVG UDP':12}{'    AVG UNIX':12}{'     USERS'}\n")
+        groupFile.write(f"{'APP NAME':40}{'   NUM MACHINES':15}{'   AVG FIFOS':12}{'   AVG PIPES':12}{'    LOCAL TCP(TOTAL)':20}{'    LOCAL UDP(TOTAL)':20}{'    AVG UNIX':12}{'     USERS'}\n")
         for proc in procAlpha:
             item = groupData[proc]
-            groupFile.write(f"{proc:40}{item[0]:15.0f}{item[1]:12.0f}{item[2]:12.0f}{item[3]:12.0f}{item[4]:12.0f}{item[5]:12.0f}{'     '+ item[6]}\n")
+            tcpString = f"{item[7]:.0f} ({item[3]:.0f})"
+            udpString = f"{item[8]:.0f} ({item[4]:.0f})"
+            line = "{0:40}{1:>15.0f}{2:>12.0f}{3:>12.0f}{4:>20}{5:>20}{6:>12.0f}     {7}\n".format(proc, item[0], item[1], item[2], tcpString, udpString, item[5], item[6])
+            groupFile.write(line)
 
 
 
@@ -234,6 +292,7 @@ else:
 
 # Get all of the zip files
 zips = glob.glob(FILE_PREFIX + "*ipcFiles.zip")
+#zips = ["../ThesisData/369.ipcFiles.zip"]
 
 userCount = 0
 appsUsed = dict()
@@ -249,6 +308,10 @@ avgUdp = dict()
 unix = dict()
 avgUnix = dict()
 users = dict()
+tcpLocal = dict()
+avgTcpLocal = dict()
+udpLocal = dict()
+avgUdpLocal = dict()
 
 for filename in zips:
     userCount += 1
@@ -270,6 +333,10 @@ for filename in zips:
     ReadDetailFile(DIRECTORY + number + "." + UDP_DATA, users)
     ReadDetailFile(DIRECTORY + number + "." + UNIX_DATA, users)
 
+    # Filter TCP/UDP results to calculate localhost
+    FilterResults(DIRECTORY + number + "." + TCP_DATA, tcpLocal)
+    FilterResults(DIRECTORY + number + "." + UDP_DATA, udpLocal)
+
     # Remove the unzipped directory
     subprocess.run(["rm", "-r", "ipcFiles"])
 
@@ -280,6 +347,8 @@ AverageAppearances(tcp, avgTcp)
 AverageAppearances(udp, avgUdp)
 AverageAppearances(unix, avgUnix)
 CalculatePercentages(percentApps, appsUsed, userCount)
+AverageAppearances(tcpLocal, avgTcpLocal)
+AverageAppearances(udpLocal, avgUdpLocal)
 
 # Sort the keys by decreasing values (so highest value-keys at beginning)
 topFifos = list(sorted(avgFifos, key=avgFifos.__getitem__, reverse=True))
@@ -324,5 +393,5 @@ if os.path.exists(GROUPED_RESULTS):
 
 subprocess.run(["touch", GROUPED_RESULTS])
 
-dicts = [appsUsed, avgFifos, avgPipes, avgTcp, avgUdp, avgUnix, users]
+dicts = [appsUsed, avgFifos, avgPipes, avgTcp, avgUdp, avgUnix, users, avgTcpLocal, avgUdpLocal]
 WriteGroupFile(dicts)

@@ -1,279 +1,279 @@
-APP NAME                                   NUM MACHINES   AVG FIFOS   AVG PIPES     AVG TCP     AVG UDP    AVG UNIX     USERS
-accountsd                                             8           0           0           0           0           1     USERNAME
-Acrobat\x20Updater                                    2           0           3           0           0           2     USERNAME
-ADDRESS BOOK                                          4           0           0           2           0           2     USERNAME
-Adobe\x20CEF\x20Helper                                2           0           4           0           0           5     USERNAME
-Adobe\x20Installer                                    1           2           0           0           0           0     root
-AdobeCRDaemon                                         1           0           0           0           0           1     USERNAME
-AdobeIPCBroker                                        2           0           0           0           0          10     USERNAME
-AdobeReader                                           2           0           0           0           0           7     USERNAME
-AdobeUpdateDaemon                                     2           2           0           0           0           0     root
-AIRPLAY                                              22           0           0           1           2           5     root, USERNAME
-airportd                                             22           0           0           0          10           3     root
-akd                                                  18           0           0           0           0           1     USERNAME, root
-APPLE PHOTOS                                          1           0           0           0           0           4     USERNAME
-APPLE PREFERENCES                                     1           0           0           0           3           5     USERNAME
-appleeventsd                                          1           0           0           0           0           1     _appleevents
-AppleIDAuthAgent                                      1           0           0           0           0           2     USERNAME
-AppleMobileDeviceHelper                               8           0           2           0           0           3     USERNAME
-AppleSpell                                            1           0         226           0           0           1     USERNAME
-AppStats                                              1           0           2           0           0           2     USERNAME
-appstoreagent                                        14           0           0           0           0           1     USERNAME
-AppTech                                               2           0           3           0           0           2     USERNAME
-apsd                                                 22           0           0           2           0           4     root
-ARDAgent                                              1           0           0           1           2           1     USERNAME
-askpermissiond                                        1           0           0           0           0           1     USERNAME
-AssetCacheLocatorService                              3           0           0           0           0           2     USERNAME, _assetcache
-assistantd                                           13           0           0           1           1           0     USERNAME
-ath                                                   3           0           2           0           0           5     USERNAME
-ATOM                                                  5           0          36           3           0          10     USERNAME
-authd                                                 1           0           0           0           0           1     root
-AVAST                                                 1           0           8          56           0          84     root, USERNAME
-avconferenced                                         9           0           0           1           4           1     USERNAME
-awdd                                                  1           0           0           0           0           1     root
-backgroundtaskmanagementagent                        19           0           0           0           0           1     USERNAME
-Backup\x20and\x20Sync                                 1           0           7          15           0           2     USERNAME
-bash                                                 22           0           1           0           0           1     root, USERNAME
-biometrickitd                                         2           0           0           1           0           1     root
-bird                                                  5           0           0           0           0           1     USERNAME
-BlueJeans                                             1           0           6           1           0           0     USERNAME
-BLUETOOTH                                            19           0           0           0           3           5     root
-Calculator                                            1           0           0           0           0           1     USERNAME
-CALENDAR                                             13           0           0           2           0           2     USERNAME
-CALLHISTORY                                           1           0           0           0           0           2     USERNAME
-callservicesd                                         2           0           0           0           0           1     USERNAME
-CalNCService                                          1           0           0           0           0           1     USERNAME
-captiveagent                                         15           0           0           0           0           2     _captiveagent
-CARBONITE                                             1           0          34           5           0           4     USERNAME, root
-cfbackd                                               1           0           0           0           0           5     root
-cfprefsd                                              5           0           0           0           0           1     root, USERNAME
-CHROME                                               16           0          50          26           8          38     USERNAME
-CiscoVideoGuardMonitor                                1           0           8           2           0           0     USERNAME
-cloudd                                               19           0           0           2           0           1     USERNAME
-cloudfamilyrestrictionsd                              1           0           0           0           0           1     USERNAME
-cloudpaird                                            1           0           0           0           0           1     USERNAME
-cloudphotosd                                          1           0           0           0           0           3     USERNAME
-CMFSyncAgent                                          1           0           0           0           0           1     USERNAME
-CODE                                                  2           0          34           2           0          14     USERNAME
-com.apple.AmbientDisplayAgent                         4           0           0           0           0           1     root
-com.apple.appkit.xpc.openAndSav                      20           0           0           0           0           1     USERNAME
-com.apple.BKAgentService                              4           0           0           0           0           1     USERNAME
-com.apple.CommerceKit.Transacti                       3           0           0           3           0           2     USERNAME
-com.apple.dock.extra                                  1           0           0           0           0           1     USERNAME
-com.apple.geod                                        7           0           0           2           0           3     USERNAME, root
-com.apple.hiservices-xpcservice                       1           0           0           0           0           1     USERNAME
-com.apple.iCloudHelper                                2           0           0           1           0           1     USERNAME
-com.apple.MediaLibraryService                         3           0           0           0           0           1     USERNAME
-com.apple.PerformanceAnalysis.a                       3           0           0           0           0           1     root
-com.apple.security.pboxd                             17           0           0           0           0           1     USERNAME
-com.apple.speech.speechsynthesi                       1           0           0           0           0           1     USERNAME
-com.apple.tonelibraryd                                1           0           0           0           0           1     USERNAME
-com.symantec.SymLUHelper                              2           0           0           0           0           2     root
-CommCenter                                           20           0           0           0           0           1     USERNAME
-commerce                                             10           0           0           2           0           1     USERNAME
-configd                                              22           0           0           0           4           3     root
-Contacts                                              1           0           0           0           0           1     USERNAME
-ContainerMetadataExtractor                           10           0           0           0           0           1     USERNAME
-ControlStrip                                          1           0           0           0           0           1     USERNAME
-CORE SERVICES                                         2           0           0           0           0           2     USERNAME, root
-coreaudiod                                            1           0           0           0           0           1     _coreaudiod
-coreduetd                                             1           0           0           0           0           1     root
-corespeechd                                          15           0           0           0           0           1     USERNAME
-CrashReporterSupportHelper                           17           0           0           0           0           1     root
-CREATIVE CLOUD                                        2           2          19          13           0          22     USERNAME
-cupsd                                                11           0           4           2           0           2     root
-DashboardClient                                       2           0           0           0           0           1     USERNAME
-DashlanePluginMASService                              1           0           4           1           0           0     USERNAME
-DataDetectorsDynamicData                              1           0           0           0           0           1     USERNAME
-dbfseventsd                                           6           0           9           0           0           2     root, USERNAME
-digest-service                                        1           0           0           0           0           1     root
-diskarbitrationd                                      1           0           0           0           0           1     root
-displaypolicyd                                       19           0           0           0           0           1     _displaypolicyd
-distnoted                                             1           0           0           0           0           1     USERNAME, _spotlight, _distnote
-Dock                                                 22           0           0           0           0           1     USERNAME
-DocumentPopoverViewService                            3           0           0           0           0           1     USERNAME
-DrCleaner                                             1           0           0           0           1           2     USERNAME
-DROPBOX                                               6           0          25          11           1          68     USERNAME
-dsAccessService                                       4           0           6           0           0           0     root
-eapolclient                                          21           0           0           0           1           2     USERNAME
-EEventManager                                         1           0           0           1           1           0     USERNAME
-Electron                                              2           0          18           8           0           8     USERNAME
-EmojiFunctionRowIM_Extension                          1           0           0           0           0           1     USERNAME
-eoshostd                                              2           0           0           1           0           0     root
-EPIC GAMES/FORTNITE                                   1           0          50           3           4           6     USERNAME
-EpsonLowInkReminderAgent                              1           0           0           0           0           1     USERNAME
-EXCEL                                                 9           0           0           2           0           3     USERNAME
-EXPRESS VPN                                           2           0           2           1           2           1     USERNAME, root
-FaceTime                                              1           0           0           0           0           1     USERNAME
-familycircled                                        15           0           0           0           0           1     USERNAME
-filecoordinationd                                     8           0           0           0           0           1     root
-Finder                                               22           0           0           0           1           1     USERNAME
-findmydeviced                                        20           0           0           0           0           1     root
-FIREFOX                                               1           0           9          19           0          54     USERNAME
-Flux                                                  2           0           0           0           0           1     USERNAME
-fmfd                                                  4           0           0           1           0           3     USERNAME
-fontd                                                 1           0           0           0           0           1     USERNAME
-FrontendAgent                                         2           0           0           0           0           1     USERNAME
-fud                                                   4           0           0           0           0           1     root
-gamed                                                 4           0           0           0           0           1     USERNAME
-hidd                                                  2           0           0           0           0           1     _hidd
-homed                                                12           0           0           0           0           3     USERNAME
-HP\x20Device\x20Monitor                               3           0           0           3           0          14     USERNAME
-icdd                                                 22           0           0           0           0          10     USERNAME
-ICON SERVICES                                         1           0           0           0           0           2     USERNAME, _iconservices
-identityservicesd                                    22           0           0           4           1           8     USERNAME
-IDSKeychainSyncingProxy                               1           0           0           0           0           1     USERNAME
-Image\x20Capture\x20Extension                         1           0           0           0           0          11     USERNAME
-imagent                                               3           0           0           0           0           1     USERNAME
-IMDPersistenceAgent                                   1           0           0           0           0           1     USERNAME
-IMLoggingAgent                                        1           0           0           0           0           1     USERNAME
-IMRemoteURLConnectionAgent                            7           0           0           3           0           2     USERNAME
-IMTransferAgent                                       2           0           0           6           0           0     USERNAME
-ITUNES                                               11           0           2           4           0          10     USERNAME
-java                                                  2           0           0           1           0           5     USERNAME
-Java\x20Updater                                       1           0           0           0           0           2     USERNAME
-JavaAppLauncher                                       2           0           0           1           0           3     USERNAME
-kdc                                                   2           0           0           2           2           1     root
-KernelEventAgent                                     22           0           0           0           0           2     root
-kextfind                                              1           0           1           0           0           0     USERNAME
-keyboardservicesd                                     2           0           0           0           0           1     USERNAME
-knowledge-agent                                       3           0           0           0           0           1     USERNAME
-launchd                                              22           0           0           4           2          36     root
-launchservicesd                                       1           0           0           0           0           1     root
-locationd                                            22           0           4           0           1           3     _locationd
-LocationMenu                                         11           0           0           0           0           1     USERNAME
-logd                                                 19           0           0           0           0           1     root
-loginwindow                                          22           0           0           0           1           1     USERNAME
-LookupViewService                                     3           0           0           4           0           2     USERNAME
-lsd                                                   1           0           0           0           0           1     USERNAME
-lsof                                                 22           0           3           0           0           0     root
-Magnet                                                1           0           0           0           0           1     USERNAME
-MAIL                                                  8           0           0           4           0           2     USERNAME
-mapspushd                                             3           0           0           0           0           2     USERNAME
-mDNSResponder                                        22           0           0           3          62          44     _mdnsresponder
-MDS                                                  20           0           0           0           0           2     root
-mdwrite                                               1           0           0           0           0           1     USERNAME
-mediaremoted                                         10           0           0           0           0           1     root
-Messages                                             16           0           0           0           0           1     USERNAME
-Microsoft\x20AutoUpdate                               1           0           0           0           0           1     USERNAME
-Microsoft\x20Outlook                                  1           0           0           0           0           4     USERNAME
-MirrorDisplays                                        1           0           0           0           0           1     USERNAME
-MobileDeviceUpdater                                  11           0           0           0           0           3     USERNAME
-mtmfs                                                 2           0           0           3           0           1     root
-mysqld                                                1           0           0           1           0           1     USERNAME
-nehelper                                              1           0           0           0           0           1     root
-nesessionmanager                                      1           0           0           0           0           3     root
-NetAuthSysAgent                                       1           0           0           0           0           1     USERNAME
-netbiosd                                             22           0           0           0           2           2     _netbios
-netsession_mac                                        1           0           0           1           2           1     USERNAME
-networkd                                              1           0           0           0           1           1     _networkd
-networkserviceproxy                                  21           0           0           0           0           1     USERNAME
-nfcd                                                  2           0           0           0           0           1     _applepay
-node                                                  2           0           6           2           0           4     USERNAME
-Norton                                                2           0           0           0           0           2     USERNAME
-Notes                                                10           0           0           2           0           1     USERNAME
-NotificationCenter                                   20           0           0           0           0           1     USERNAME
-nsurlsessiond                                        22           0          11          10           0           2     USERNAME, _nsurlsessiond
-nsurlstoraged                                        20           0           0           0           0           1     USERNAME
-ntpd                                                  3           0           1           0           8           1     root
-ocspd                                                 1           0           0           0           0           2     root
-Office365ServiceV2                                    4           0           0           1           0           2     USERNAME
-OneDrive                                              1           0           0           6           0           4     USERNAME
-opendirectoryd                                        1           0           0           0           0           1     root
-OPERA                                                 2           0          41          14           5          27     USERNAME
-OSDUIHelper                                          15           0           0           0           0           1     USERNAME
-p                                                     1           0           2           2           0           2     USERNAME
-P72E3GC48.com.dashlane.Dashlane                       1           0          10           1           0           0     USERNAME
-Pages                                                 2           0           0           0           0           2     USERNAME
-parentalcontrolsd                                     2           0           0          10           0           4     root
-parsecd                                              10           0           0           0           0           1     USERNAME
-pbs                                                   7           0           0           0           0           1     USERNAME
-pdftex                                                1           0           3           0           0           0     USERNAME
-PerfPowerServices                                    15           0           0           0           1           0     root
-photoanalysisd                                        4           0           0           0           0           1     USERNAME
-photolibraryd                                         1           0           0           0           0           1     USERNAME
-plugin-container                                      1           0          20           0           0          42     USERNAME
-pma                                                   1           0           0           0           0           1     USERNAME
-powerd                                                1           0           0           0           0           1     root
-POWERPOINT                                           11           0           0           1           0           3     USERNAME
-Preview                                              18           0           0           0           0           1     USERNAME
-PRINTING                                              8           0           0           0           0           2     USERNAME
-ProtectedCloudKeySyncing                              2           0           0           0           0           1     USERNAME
-PulseTray                                             2           0           0           0           0           1     USERNAME
-PYTHON                                                2           0          17           1           0          16     USERNAME
-QuickLookUIService                                    2           0           0           0           0           1     USERNAME
-R                                                     3           0           8           1           0           2     USERNAME
-rapportd                                             19           0           0           2           1           2     USERNAME
-rcd                                                   1           0           0           0           0           1     USERNAME
-RDR CEF                                               2           0          14           0           0           5     USERNAME
-ReceiverHelper                                        1           0           0           0           0           1     USERNAME
-recentsd                                              1           0           0           0           0           1     USERNAME
-remoting_me2me_host                                   1           0          18           1           0           1     USERNAME
-ReportCrash                                           3           0           0           0           0           1     USERNAME, root
-routined                                              2           0           0           0           0           1     USERNAME
-rpcsvchost                                           11           0           0           0           0           1     root
-rsession                                              3           0           9           3           0           1     USERNAME
-rtcreportingd                                        14           0           0           0           0           1     root, USERNAME
-SAFARI                                               11           0           2          19           0          10     USERNAME
-SCIM_Extension                                        3           0           0           0           0           1     USERNAME
-ScopedBookmarkAgent                                   1           0           0           0           0           1     USERNAME
-screencaptureui                                       1           0           0           0           0           1     USERNAME
-secd                                                 20           0           0           0           0           1     USERNAME, _locationd
-sharedfilelistd                                       1           0           0           0           0           1     USERNAME
-sharingd                                             22           0           0           0           5           6     USERNAME
-SidecarRelay                                          8           0           0           0           0           1     USERNAME
-Similar\x20Photo\x20Cleaner                           1           0           0           0           0           1     USERNAME
-SIRI                                                  9           0           0           0           0           2     USERNAME
-SiriNCService                                         1           0           0           0           0           1     USERNAME
-SLACK                                                 1           0          40           3           0           8     USERNAME
-soagent                                               1           0           0           0           0           1     USERNAME
-socketfilterfw                                        3           0           4           0           0           2     root
-softwareupdated                                       1           0           0           0           0           2     _softwareupdate
-Spark                                                 1           0           0           5           0           2     USERNAME
-SPINDUMP                                              4           0           0           0           0           2     USERNAME, root
-SPOTIFY                                              12           0          33           9           3          10     USERNAME
-SPOTLIGHT                                            20           0           0           5           0           3     USERNAME
-ssh-agent                                             2           0           9           0           0           4     USERNAME
-Stickies                                              3           0           0           0           0           1     USERNAME
-storeaccountd                                         1           0           0           0           0           2     USERNAME
-storeassetd                                           1           0           0           2           0           2     USERNAME
-storedownloadd                                        1           0           0           0           0           2     USERNAME
-storeuid                                              1           0           0           0           0           1     USERNAME
-SubmitDiagInfo                                        1           0           0           0           0           3     root
-sudo                                                 22           0           3           0           0           1     root
-suggestd                                              3           0           0           0           0           1     USERNAME
-suhelperd                                            19           0           0           0           0           1     root
-SymDaemon                                             2           0           8           1           1          16     root
-symptomsd                                            22           0           0           0           1           1     _networkd
-syncdefaultsd                                         5           0           0           1           0           2     USERNAME
-syslogd                                              22           0           0           0           1           2     root
-syspolicyd                                           15           0           0           0           0           1     root
-System\x20Preferences                                 4           0           0           0           0           1     USERNAME
-systemstats                                          19           0           0           0           1           1     root
-SystemUIServer                                       22           0           3           0           5           1     USERNAME
-tccd                                                  1           0           0           0           0           1     USERNAME
-Terminal                                             22           0           4           0           0           1     USERNAME
-TeXShop                                               2           0           1           0           0           1     USERNAME
-TextEdit                                              7           0           0           0           0           1     USERNAME
-timed                                                19           0           0           0           1           2     _timed
-TouchBarServer                                        1           0           0           0           0           1     root
-trustd                                                8           0           0           0           0           2     root, USERNAME, _locationd
-usbmuxd                                              22           0           0           1           0          10     _usbmuxd
-useractivityd                                         1           0           0           0           0           1     USERNAME
-UserEventAgent                                       22           0           0           0           1           4     USERNAME, root
-usernoted                                            16           0           0           0           0           1     USERNAME
-vpnagentd                                             2           0          23           1           0           1     root
-warmd                                                 1           0           0           0           0           1     root
-WDSecurityHelper                                      1           0           0           0           0           1     USERNAME
-WeatherService                                        1           0           0           0           0           1     USERNAME
-WiFiAgent                                            22           0           0           0           1           1     USERNAME
-WiFiProxy                                            20           0           0           0           1           0     USERNAME
-wifivelocityd                                         3           0           0           0           2           2     root
-WindowServer                                         18           0           0           0           0           1     _windowserver
-wirelessproxd                                         1           0           0           0           0           1     root
-WirelessRadioManagerd                                20           0           0           0           1           0     root
-WORD                                                 16           0           4           3           0           4     USERNAME
-WunderlistHelper                                      1           0           0           0           0           3     USERNAME
-xartstorageremoted                                    2           0           0           2           0           0     root
-ZoomOpener                                            3           0           4           1           0           0     USERNAME
-zotero                                                1           0           4           4           0           2     USERNAME
+APP NAME                                   NUM MACHINES   AVG FIFOS   AVG PIPES    LOCAL TCP(TOTAL)    LOCAL UDP(TOTAL)    AVG UNIX     USERS
+accountsd                                             8           0           0               0 (0)               0 (0)           1     USERNAME
+Acrobat\x20Updater                                    2           0           3               0 (0)               0 (0)           2     USERNAME
+ADDRESS BOOK                                          4           0           0               0 (2)               0 (0)           2     USERNAME
+Adobe\x20CEF\x20Helper                                2           0           4               0 (0)               0 (0)           5     USERNAME
+Adobe\x20Installer                                    1           2           0               0 (0)               0 (0)           0     root
+AdobeCRDaemon                                         1           0           0               0 (0)               0 (0)           1     USERNAME
+AdobeIPCBroker                                        2           0           0               0 (0)               0 (0)          10     USERNAME
+AdobeReader                                           2           0           0               0 (0)               0 (0)           7     USERNAME
+AdobeUpdateDaemon                                     2           2           0               0 (0)               0 (0)           0     root
+AIRPLAY                                              22           0           0               0 (1)               2 (2)           5     root, USERNAME
+airportd                                             22           0           0               0 (0)             10 (10)           3     root
+akd                                                  18           0           0               0 (0)               0 (0)           1     root, USERNAME
+APPLE PHOTOS                                          1           0           0               0 (0)               0 (0)           4     USERNAME
+APPLE PREFERENCES                                     1           0           0               0 (0)               3 (3)           5     USERNAME
+appleeventsd                                          1           0           0               0 (0)               0 (0)           1     _appleevents
+AppleIDAuthAgent                                      1           0           0               0 (0)               0 (0)           2     USERNAME
+AppleMobileDeviceHelper                               8           0           2               0 (0)               0 (0)           3     USERNAME
+AppleSpell                                            1           0         226               0 (0)               0 (0)           1     USERNAME
+AppStats                                              1           0           2               0 (0)               0 (0)           2     USERNAME
+appstoreagent                                        14           0           0               0 (0)               0 (0)           1     USERNAME
+AppTech                                               2           0           3               0 (0)               0 (0)           2     USERNAME
+apsd                                                 22           0           0               0 (2)               0 (0)           4     root
+ARDAgent                                              1           0           0               1 (1)               2 (2)           1     USERNAME
+askpermissiond                                        1           0           0               0 (0)               0 (0)           1     USERNAME
+AssetCacheLocatorService                              3           0           0               0 (0)               0 (0)           2     _assetcache, USERNAME
+assistantd                                           13           0           0               0 (1)               1 (1)           0     USERNAME
+ath                                                   3           0           2               0 (0)               0 (0)           5     USERNAME
+ATOM                                                  5           0          36               0 (3)               0 (0)          10     USERNAME
+authd                                                 1           0           0               0 (0)               0 (0)           1     root
+AVAST                                                 1           0           8              2 (56)               0 (0)          84     root, USERNAME
+avconferenced                                         9           0           0               1 (1)               4 (4)           1     USERNAME
+awdd                                                  1           0           0               0 (0)               0 (0)           1     root
+backgroundtaskmanagementagent                        19           0           0               0 (0)               0 (0)           1     USERNAME
+Backup\x20and\x20Sync                                 1           0           7              0 (15)               0 (0)           2     USERNAME
+bash                                                 22           0           1               0 (0)               0 (0)           1     root, USERNAME
+biometrickitd                                         2           0           0               0 (1)               0 (0)           1     root
+bird                                                  5           0           0               0 (0)               0 (0)           1     USERNAME
+BlueJeans                                             1           0           6               1 (1)               0 (0)           0     USERNAME
+BLUETOOTH                                            19           0           0               0 (0)               3 (3)           5     root
+Calculator                                            1           0           0               0 (0)               0 (0)           1     USERNAME
+CALENDAR                                             13           0           0               0 (2)               0 (0)           2     USERNAME
+CALLHISTORY                                           1           0           0               0 (0)               0 (0)           2     USERNAME
+callservicesd                                         2           0           0               0 (0)               0 (0)           1     USERNAME
+CalNCService                                          1           0           0               0 (0)               0 (0)           1     USERNAME
+captiveagent                                         15           0           0               0 (0)               0 (0)           2     _captiveagent
+CARBONITE                                             1           0          34               2 (5)               0 (0)           4     root, USERNAME
+cfbackd                                               1           0           0               0 (0)               0 (0)           5     root
+cfprefsd                                              5           0           0               0 (0)               0 (0)           1     root, USERNAME
+CHROME                                               16           0          50              1 (26)               1 (8)          38     USERNAME
+CiscoVideoGuardMonitor                                1           0           8               2 (2)               0 (0)           0     USERNAME
+cloudd                                               19           0           0               0 (2)               0 (0)           1     USERNAME
+cloudfamilyrestrictionsd                              1           0           0               0 (0)               0 (0)           1     USERNAME
+cloudpaird                                            1           0           0               0 (0)               0 (0)           1     USERNAME
+cloudphotosd                                          1           0           0               0 (0)               0 (0)           3     USERNAME
+CMFSyncAgent                                          1           0           0               0 (0)               0 (0)           1     USERNAME
+CODE                                                  2           0          34               2 (2)               0 (0)          14     USERNAME
+com.apple.AmbientDisplayAgent                         4           0           0               0 (0)               0 (0)           1     root
+com.apple.appkit.xpc.openAndSav                      20           0           0               0 (0)               0 (0)           1     USERNAME
+com.apple.BKAgentService                              4           0           0               0 (0)               0 (0)           1     USERNAME
+com.apple.CommerceKit.Transacti                       3           0           0               0 (3)               0 (0)           2     USERNAME
+com.apple.dock.extra                                  1           0           0               0 (0)               0 (0)           1     USERNAME
+com.apple.geod                                        7           0           0               0 (2)               0 (0)           3     root, USERNAME
+com.apple.hiservices-xpcservice                       1           0           0               0 (0)               0 (0)           1     USERNAME
+com.apple.iCloudHelper                                2           0           0               0 (1)               0 (0)           1     USERNAME
+com.apple.MediaLibraryService                         3           0           0               0 (0)               0 (0)           1     USERNAME
+com.apple.PerformanceAnalysis.a                       3           0           0               0 (0)               0 (0)           1     root
+com.apple.security.pboxd                             17           0           0               0 (0)               0 (0)           1     USERNAME
+com.apple.speech.speechsynthesi                       1           0           0               0 (0)               0 (0)           1     USERNAME
+com.apple.tonelibraryd                                1           0           0               0 (0)               0 (0)           1     USERNAME
+com.symantec.SymLUHelper                              2           0           0               0 (0)               0 (0)           2     root
+CommCenter                                           20           0           0               0 (0)               0 (0)           1     USERNAME
+commerce                                             10           0           0               0 (2)               0 (0)           1     USERNAME
+configd                                              22           0           0               0 (0)               4 (4)           3     root
+Contacts                                              1           0           0               0 (0)               0 (0)           1     USERNAME
+ContainerMetadataExtractor                           10           0           0               0 (0)               0 (0)           1     USERNAME
+ControlStrip                                          1           0           0               0 (0)               0 (0)           1     USERNAME
+CORE SERVICES                                         2           0           0               0 (0)               0 (0)           2     root, USERNAME
+coreaudiod                                            1           0           0               0 (0)               0 (0)           1     _coreaudiod
+coreduetd                                             1           0           0               0 (0)               0 (0)           1     root
+corespeechd                                          15           0           0               0 (0)               0 (0)           1     USERNAME
+CrashReporterSupportHelper                           17           0           0               0 (0)               0 (0)           1     root
+CREATIVE CLOUD                                        2           2          19              2 (13)               0 (0)          22     USERNAME
+cupsd                                                11           0           4               2 (2)               0 (0)           2     root
+DashboardClient                                       2           0           0               0 (0)               0 (0)           1     USERNAME
+DashlanePluginMASService                              1           0           4               1 (1)               0 (0)           0     USERNAME
+DataDetectorsDynamicData                              1           0           0               0 (0)               0 (0)           1     USERNAME
+dbfseventsd                                           6           0           9               0 (0)               0 (0)           2     root, USERNAME
+digest-service                                        1           0           0               0 (0)               0 (0)           1     root
+diskarbitrationd                                      1           0           0               0 (0)               0 (0)           1     root
+displaypolicyd                                       19           0           0               0 (0)               0 (0)           1     _displaypolicyd
+distnoted                                             1           0           0               0 (0)               0 (0)           1     _distnote, USERNAME, _spotlight
+Dock                                                 22           0           0               0 (0)               0 (0)           1     USERNAME
+DocumentPopoverViewService                            3           0           0               0 (0)               0 (0)           1     USERNAME
+DrCleaner                                             1           0           0               0 (0)               1 (1)           2     USERNAME
+DROPBOX                                               6           0          25              0 (11)               1 (1)          68     USERNAME
+dsAccessService                                       4           0           6               0 (0)               0 (0)           0     root
+eapolclient                                          21           0           0               0 (0)               1 (1)           2     USERNAME
+EEventManager                                         1           0           0               1 (1)               1 (1)           0     USERNAME
+Electron                                              2           0          18               0 (8)               0 (0)           8     USERNAME
+EmojiFunctionRowIM_Extension                          1           0           0               0 (0)               0 (0)           1     USERNAME
+eoshostd                                              2           0           0               0 (1)               0 (0)           0     root
+EPIC GAMES/FORTNITE                                   1           0          50               0 (3)               4 (4)           6     USERNAME
+EpsonLowInkReminderAgent                              1           0           0               0 (0)               0 (0)           1     USERNAME
+EXCEL                                                 9           0           0               0 (2)               0 (0)           3     USERNAME
+EXPRESS VPN                                           2           0           2               1 (1)               1 (2)           1     root, USERNAME
+FaceTime                                              1           0           0               0 (0)               0 (0)           1     USERNAME
+familycircled                                        15           0           0               0 (0)               0 (0)           1     USERNAME
+filecoordinationd                                     8           0           0               0 (0)               0 (0)           1     root
+Finder                                               22           0           0               0 (0)               1 (1)           1     USERNAME
+findmydeviced                                        20           0           0               0 (0)               0 (0)           1     root
+FIREFOX                                               1           0           9              0 (19)               0 (0)          54     USERNAME
+Flux                                                  2           0           0               0 (0)               0 (0)           1     USERNAME
+fmfd                                                  4           0           0               0 (1)               0 (0)           3     USERNAME
+fontd                                                 1           0           0               0 (0)               0 (0)           1     USERNAME
+FrontendAgent                                         2           0           0               0 (0)               0 (0)           1     USERNAME
+fud                                                   4           0           0               0 (0)               0 (0)           1     root
+gamed                                                 4           0           0               0 (0)               0 (0)           1     USERNAME
+hidd                                                  2           0           0               0 (0)               0 (0)           1     _hidd
+homed                                                12           0           0               0 (0)               0 (0)           3     USERNAME
+HP\x20Device\x20Monitor                               3           0           0               3 (3)               0 (0)          14     USERNAME
+icdd                                                 22           0           0               0 (0)               0 (0)          10     USERNAME
+ICON SERVICES                                         1           0           0               0 (0)               0 (0)           2     USERNAME, _iconservices
+identityservicesd                                    22           0           0               0 (4)               1 (1)           8     USERNAME
+IDSKeychainSyncingProxy                               1           0           0               0 (0)               0 (0)           1     USERNAME
+Image\x20Capture\x20Extension                         1           0           0               0 (0)               0 (0)          11     USERNAME
+imagent                                               3           0           0               0 (0)               0 (0)           1     USERNAME
+IMDPersistenceAgent                                   1           0           0               0 (0)               0 (0)           1     USERNAME
+IMLoggingAgent                                        1           0           0               0 (0)               0 (0)           1     USERNAME
+IMRemoteURLConnectionAgent                            7           0           0               0 (3)               0 (0)           2     USERNAME
+IMTransferAgent                                       2           0           0               0 (6)               0 (0)           0     USERNAME
+ITUNES                                               11           0           2               0 (4)               0 (0)          10     USERNAME
+java                                                  2           0           0               1 (1)               0 (0)           5     USERNAME
+Java\x20Updater                                       1           0           0               0 (0)               0 (0)           2     USERNAME
+JavaAppLauncher                                       2           0           0               0 (1)               0 (0)           3     USERNAME
+kdc                                                   2           0           0               2 (2)               2 (2)           1     root
+KernelEventAgent                                     22           0           0               0 (0)               0 (0)           2     root
+kextfind                                              1           0           1               0 (0)               0 (0)           0     USERNAME
+keyboardservicesd                                     2           0           0               0 (0)               0 (0)           1     USERNAME
+knowledge-agent                                       3           0           0               0 (0)               0 (0)           1     USERNAME
+launchd                                              22           0           0               4 (4)               2 (2)          36     root
+launchservicesd                                       1           0           0               0 (0)               0 (0)           1     root
+locationd                                            22           0           4               0 (0)               1 (1)           3     _locationd
+LocationMenu                                         11           0           0               0 (0)               0 (0)           1     USERNAME
+logd                                                 19           0           0               0 (0)               0 (0)           1     root
+loginwindow                                          22           0           0               0 (0)               1 (1)           1     USERNAME
+LookupViewService                                     3           0           0               0 (4)               0 (0)           2     USERNAME
+lsd                                                   1           0           0               0 (0)               0 (0)           1     USERNAME
+lsof                                                 22           0           3               0 (0)               0 (0)           0     root
+Magnet                                                1           0           0               0 (0)               0 (0)           1     USERNAME
+MAIL                                                  8           0           0               0 (4)               0 (0)           2     USERNAME
+mapspushd                                             3           0           0               0 (0)               0 (0)           2     USERNAME
+mDNSResponder                                        22           0           0               1 (3)             62 (62)          44     _mdnsresponder
+MDS                                                  20           0           0               0 (0)               0 (0)           2     root
+mdwrite                                               1           0           0               0 (0)               0 (0)           1     USERNAME
+mediaremoted                                         10           0           0               0 (0)               0 (0)           1     root
+Messages                                             16           0           0               0 (0)               0 (0)           1     USERNAME
+Microsoft\x20AutoUpdate                               1           0           0               0 (0)               0 (0)           1     USERNAME
+Microsoft\x20Outlook                                  1           0           0               0 (0)               0 (0)           4     USERNAME
+MirrorDisplays                                        1           0           0               0 (0)               0 (0)           1     USERNAME
+MobileDeviceUpdater                                  11           0           0               0 (0)               0 (0)           3     USERNAME
+mtmfs                                                 2           0           0               3 (3)               0 (0)           1     root
+mysqld                                                1           0           0               1 (1)               0 (0)           1     USERNAME
+nehelper                                              1           0           0               0 (0)               0 (0)           1     root
+nesessionmanager                                      1           0           0               0 (0)               0 (0)           3     root
+NetAuthSysAgent                                       1           0           0               0 (0)               0 (0)           1     USERNAME
+netbiosd                                             22           0           0               0 (0)               2 (2)           2     _netbios
+netsession_mac                                        1           0           0               1 (1)               2 (2)           1     USERNAME
+networkd                                              1           0           0               0 (0)               1 (1)           1     _networkd
+networkserviceproxy                                  21           0           0               0 (0)               0 (0)           1     USERNAME
+nfcd                                                  2           0           0               0 (0)               0 (0)           1     _applepay
+node                                                  2           0           6               2 (2)               0 (0)           4     USERNAME
+Norton                                                2           0           0               0 (0)               0 (0)           2     USERNAME
+Notes                                                10           0           0               0 (2)               0 (0)           1     USERNAME
+NotificationCenter                                   20           0           0               0 (0)               0 (0)           1     USERNAME
+nsurlsessiond                                        22           0          11              0 (10)               0 (0)           2     USERNAME, _nsurlsessiond
+nsurlstoraged                                        20           0           0               0 (0)               0 (0)           1     USERNAME
+ntpd                                                  3           0           1               0 (0)               1 (8)           1     root
+ocspd                                                 1           0           0               0 (0)               0 (0)           2     root
+Office365ServiceV2                                    4           0           0               1 (1)               0 (0)           2     USERNAME
+OneDrive                                              1           0           0               0 (6)               0 (0)           4     USERNAME
+opendirectoryd                                        1           0           0               0 (0)               0 (0)           1     root
+OPERA                                                 2           0          41              0 (14)               0 (5)          27     USERNAME
+OSDUIHelper                                          15           0           0               0 (0)               0 (0)           1     USERNAME
+p                                                     1           0           2               0 (2)               0 (0)           2     USERNAME
+P72E3GC48.com.dashlane.Dashlane                       1           0          10               1 (1)               0 (0)           0     USERNAME
+Pages                                                 2           0           0               0 (0)               0 (0)           2     USERNAME
+parentalcontrolsd                                     2           0           0             10 (10)               0 (0)           4     root
+parsecd                                              10           0           0               0 (0)               0 (0)           1     USERNAME
+pbs                                                   7           0           0               0 (0)               0 (0)           1     USERNAME
+pdftex                                                1           0           3               0 (0)               0 (0)           0     USERNAME
+PerfPowerServices                                    15           0           0               0 (0)               1 (1)           0     root
+photoanalysisd                                        4           0           0               0 (0)               0 (0)           1     USERNAME
+photolibraryd                                         1           0           0               0 (0)               0 (0)           1     USERNAME
+plugin-container                                      1           0          20               0 (0)               0 (0)          42     USERNAME
+pma                                                   1           0           0               0 (0)               0 (0)           1     USERNAME
+powerd                                                1           0           0               0 (0)               0 (0)           1     root
+POWERPOINT                                           11           0           0               0 (1)               0 (0)           3     USERNAME
+Preview                                              18           0           0               0 (0)               0 (0)           1     USERNAME
+PRINTING                                              8           0           0               0 (0)               0 (0)           2     USERNAME
+ProtectedCloudKeySyncing                              2           0           0               0 (0)               0 (0)           1     USERNAME
+PulseTray                                             2           0           0               0 (0)               0 (0)           1     USERNAME
+PYTHON                                                2           0          17               1 (1)               0 (0)          16     USERNAME
+QuickLookUIService                                    2           0           0               0 (0)               0 (0)           1     USERNAME
+R                                                     3           0           8               1 (1)               0 (0)           2     USERNAME
+rapportd                                             19           0           0               2 (2)               1 (1)           2     USERNAME
+rcd                                                   1           0           0               0 (0)               0 (0)           1     USERNAME
+RDR CEF                                               2           0          14               0 (0)               0 (0)           5     USERNAME
+ReceiverHelper                                        1           0           0               0 (0)               0 (0)           1     USERNAME
+recentsd                                              1           0           0               0 (0)               0 (0)           1     USERNAME
+remoting_me2me_host                                   1           0          18               0 (1)               0 (0)           1     USERNAME
+ReportCrash                                           3           0           0               0 (0)               0 (0)           1     root, USERNAME
+routined                                              2           0           0               0 (0)               0 (0)           1     USERNAME
+rpcsvchost                                           11           0           0               0 (0)               0 (0)           1     root
+rsession                                              3           0           9               3 (3)               0 (0)           1     USERNAME
+rtcreportingd                                        14           0           0               0 (0)               0 (0)           1     root, USERNAME
+SAFARI                                               11           0           2              0 (19)               0 (0)          10     USERNAME
+SCIM_Extension                                        3           0           0               0 (0)               0 (0)           1     USERNAME
+ScopedBookmarkAgent                                   1           0           0               0 (0)               0 (0)           1     USERNAME
+screencaptureui                                       1           0           0               0 (0)               0 (0)           1     USERNAME
+secd                                                 20           0           0               0 (0)               0 (0)           1     _locationd, USERNAME
+sharedfilelistd                                       1           0           0               0 (0)               0 (0)           1     USERNAME
+sharingd                                             22           0           0               0 (0)               5 (5)           6     USERNAME
+SidecarRelay                                          8           0           0               0 (0)               0 (0)           1     USERNAME
+Similar\x20Photo\x20Cleaner                           1           0           0               0 (0)               0 (0)           1     USERNAME
+SIRI                                                  9           0           0               0 (0)               0 (0)           2     USERNAME
+SiriNCService                                         1           0           0               0 (0)               0 (0)           1     USERNAME
+SLACK                                                 1           0          40               0 (3)               0 (0)           8     USERNAME
+soagent                                               1           0           0               0 (0)               0 (0)           1     USERNAME
+socketfilterfw                                        3           0           4               0 (0)               0 (0)           2     root
+softwareupdated                                       1           0           0               0 (0)               0 (0)           2     _softwareupdate
+Spark                                                 1           0           0               0 (5)               0 (0)           2     USERNAME
+SPINDUMP                                              4           0           0               0 (0)               0 (0)           2     root, USERNAME
+SPOTIFY                                              12           0          33               1 (9)               3 (3)          10     USERNAME
+SPOTLIGHT                                            20           0           0               0 (5)               0 (0)           3     USERNAME
+ssh-agent                                             2           0           9               0 (0)               0 (0)           4     USERNAME
+Stickies                                              3           0           0               0 (0)               0 (0)           1     USERNAME
+storeaccountd                                         1           0           0               0 (0)               0 (0)           2     USERNAME
+storeassetd                                           1           0           0               0 (2)               0 (0)           2     USERNAME
+storedownloadd                                        1           0           0               0 (0)               0 (0)           2     USERNAME
+storeuid                                              1           0           0               0 (0)               0 (0)           1     USERNAME
+SubmitDiagInfo                                        1           0           0               0 (0)               0 (0)           3     root
+sudo                                                 22           0           3               0 (0)               0 (0)           1     root
+suggestd                                              3           0           0               0 (0)               0 (0)           1     USERNAME
+suhelperd                                            19           0           0               0 (0)               0 (0)           1     root
+SymDaemon                                             2           0           8               0 (1)               1 (1)          16     root
+symptomsd                                            22           0           0               0 (0)               1 (1)           1     _networkd
+syncdefaultsd                                         5           0           0               0 (1)               0 (0)           2     USERNAME
+syslogd                                              22           0           0               0 (0)               1 (1)           2     root
+syspolicyd                                           15           0           0               0 (0)               0 (0)           1     root
+System\x20Preferences                                 4           0           0               0 (0)               0 (0)           1     USERNAME
+systemstats                                          19           0           0               0 (0)               2 (1)           1     root
+SystemUIServer                                       22           0           3               0 (0)               5 (5)           1     USERNAME
+tccd                                                  1           0           0               0 (0)               0 (0)           1     USERNAME
+Terminal                                             22           0           4               0 (0)               0 (0)           1     USERNAME
+TeXShop                                               2           0           1               0 (0)               0 (0)           1     USERNAME
+TextEdit                                              7           0           0               0 (0)               0 (0)           1     USERNAME
+timed                                                19           0           0               0 (0)               1 (1)           2     _timed
+TouchBarServer                                        1           0           0               0 (0)               0 (0)           1     root
+trustd                                                8           0           0               0 (0)               0 (0)           2     _locationd, root, USERNAME
+usbmuxd                                              22           0           0               0 (1)               0 (0)          10     _usbmuxd
+useractivityd                                         1           0           0               0 (0)               0 (0)           1     USERNAME
+UserEventAgent                                       22           0           0               0 (0)               1 (1)           4     root, USERNAME
+usernoted                                            16           0           0               0 (0)               0 (0)           1     USERNAME
+vpnagentd                                             2           0          23               1 (1)               0 (0)           1     root
+warmd                                                 1           0           0               0 (0)               0 (0)           1     root
+WDSecurityHelper                                      1           0           0               0 (0)               0 (0)           1     USERNAME
+WeatherService                                        1           0           0               0 (0)               0 (0)           1     USERNAME
+WiFiAgent                                            22           0           0               0 (0)               1 (1)           1     USERNAME
+WiFiProxy                                            20           0           0               0 (0)               1 (1)           0     USERNAME
+wifivelocityd                                         3           0           0               0 (0)               2 (2)           2     root
+WindowServer                                         18           0           0               0 (0)               0 (0)           1     _windowserver
+wirelessproxd                                         1           0           0               0 (0)               0 (0)           1     root
+WirelessRadioManagerd                                20           0           0               0 (0)               1 (1)           0     root
+WORD                                                 16           0           4               2 (3)               0 (0)           4     USERNAME
+WunderlistHelper                                      1           0           0               0 (0)               0 (0)           3     USERNAME
+xartstorageremoted                                    2           0           0               2 (2)               0 (0)           0     root
+ZoomOpener                                            3           0           4               1 (1)               0 (0)           0     USERNAME
+zotero                                                1           0           4               2 (4)               0 (0)           2     USERNAME
