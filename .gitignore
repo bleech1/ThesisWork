@@ -7,3 +7,6 @@ readPipes/*
 research/*
 *.DS_Store
 *settings.json
+*.dSYM
+*mmap_address.bin
+*c_cpp_properties.json

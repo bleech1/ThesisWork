@@ -1,0 +1,47 @@
+NOTES
+
+UNIX Domain Sockets
+    - use socketpair
+        - device is indecipherable letters/numbers
+        - name is -> then the other end's device
+    - using socketpair, multiple clients to one server
+        - create socketpair, send the client fd to another process
+            - the other process takes that fd and sends data
+        - server
+            - device is indecipherable letters/numbers
+            - name is -> then the other end's device
+        - child client
+            - device is indecipherable letters/numbers
+            - name is -> then the server's device
+        - new client
+            - device is indecipherable letters/numbers
+            - name is -> then the server's device
+        - both clients have the same device
+        - if close the server first, new client name is -> (none)
+    - listen using named sockets
+        - waiting for connections
+            - has one connection to the socket
+            - device is indecipherable letters/numbers
+            - name is the name of the socket
+        - has a connection
+            - server
+                - has 2 connections to the socket
+                    - one is socketFd, other is connection
+                - device is indecipherable letters/numbers
+                - name is the name of the socket
+            - client
+                - has one connection
+                - device is indecipherable letters/numbers
+                - name is the device of the clientFd of the server
+        - has more than one connections
+            - server
+                - for each additional connection, another connection to named
+                - device is indecipherable letters/numbers
+                - name is the name of the socket
+            - client
+                - has one connection (looks same no matter number of clients)
+                - device is indecipherable letters/numbers
+                - name is the device of the clientFd of the server
+    - abstract sockets
+        - only a Linux thing
+        - do not exist on Macs
