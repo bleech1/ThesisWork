@@ -1,0 +1,13 @@
+RESULTS
+
+Spotify
+    - when fuzzing the UDP "heartbeat" port
+        - tried 544318 and could not get any crashes
+VS Code
+    - when fuzzing the TCP port, can kill the Vim extension
+        - it's really hard to type
+        - either need to restart the extension or completely restart the app
+    - when fuzzing the shared UNIX socket
+
+launchd
+    - 
