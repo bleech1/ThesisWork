@@ -7,7 +7,7 @@ import random
 
 
 UDP_IP = "127.0.0.1"
-UDP_PORT = 5353
+UDP_PORT = 51184
 PROCESS_NAME = "mDNSResponder"
 OUTPUT_FILE = "mdnsUdpFuzz.txt"
 PATH_TO_APP = "/usr/sbin/mDNSResponderHelper"
@@ -47,6 +47,7 @@ def Main():
 
     for i in range(NUM_RUNS):
         try:
+            """
             if random.random() < 0.5:
                 # get the random pieces using radamsa
                 proc1 = subprocess.Popen(["echo", R1], stdout = subprocess.PIPE)
@@ -83,6 +84,13 @@ def Main():
 
                 # put together the data
                 randomPacket = P2_1 + rand1 + P2_2 + rand2 + P2_3 + rand3 + P2_4 + rand4 + P2_5 + rand5 + P2_6 + rand6 + P2_7 + rand7 + P2_8 + rand8
+                """
+            # get the random pieces using radamsa
+            proc1 = subprocess.Popen(["echo", R1], stdout = subprocess.PIPE)
+            proc2 = subprocess.Popen(["../../radamsa/bin/radamsa"], stdin = proc1.stdout, stdout = subprocess.PIPE)
+            random1, error = proc2.communicate()
+            # put together the data
+            randomPacket = bytes(P1, "utf-8") + random1
             
             if len(randomPacket) > 1500:
                 randomPacket = randomPacket[ : 1500]

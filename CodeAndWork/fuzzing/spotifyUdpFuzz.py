@@ -6,9 +6,9 @@ import os
 
 
 UDP_IP = "127.0.0.1"
-UDP_PORT = 57621
+UDP_PORT = 55484
 PROCESS_NAME = "Spotify"
-OUTPUT_FILE = "spotifyPort57621.txt"
+OUTPUT_FILE = "spotifyUdpRandom.txt"
 PATH_TO_APP = "/Applications/Spotify.app/Contents/MacOS/Spotify"
 NUM_RUNS = 1000000
 
@@ -31,7 +31,10 @@ def Main():
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind((UDP_IP, UDP_PORT))
 
-    StartApp()
+    #StartApp()
+
+    len1 = len(FIRST_RANDOM)
+    len2 = len(SECOND_RANDOM)
 
     for i in range(NUM_RUNS):
         try:
@@ -44,10 +47,10 @@ def Main():
             random2, error = proc4.communicate()
 
             # make sure lengths are not too long
-            if len(random1) > len(FIRST_RANDOM):
-                random1 = random1[ : len(FIRST_RANDOM)]
-            if len(random2) > len(SECOND_RANDOM):
-                random2 = random2[ : len(SECOND_RANDOM)]
+            if len(random1) > len1:
+                random1 = random1[ : len1]
+            if len(random2) > len2:
+                random2 = random2[ : len2]
 
             # put together the data
             randomPacket = bytes(START, "utf-8") + random1 + bytes(MIDDLE, "utf-8") + random2
@@ -59,9 +62,10 @@ def Main():
                 numCrashes += 1
                 StartApp()
             numTests += 1
-            print(".")
+            print(i)
         except KeyboardInterrupt:
             Clean()
+    Clean()
 
 def StartApp():
     subprocess.Popen([PATH_TO_APP, "&"])

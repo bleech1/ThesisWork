@@ -1,0 +1,26 @@
+- open connections
+    - no named pipes
+    - no tcp sockets open
+    - netbiosd and launchd both have UDP ports 137 and 138 open
+        - port 137
+*           - as a client, sends netbios messages
+                - \x45\x7f\x01\x10\x00\x01\x00\x00\x00\x00\x00\x00\x20\x41\x42\x41\x43\x46\x50\x46\x50\x45\x4e\x46\x44\x45\x43\x46\x43\x45\x50\x46\x48\x44\x44\x45\x46\x46\x50\x46\x50\x41\x43\x41\x42\x00\x00\x20\x00\x01
+                - \x45\x81\x29\x10\x00\x01\x00\x00\x00\x00\x00\x01\x20\x45\x43\x46\x43\x45\x46\x45\x4f\x45\x45\x45\x42\x45\x4f\x46\x44\x43\x4e\x45\x4e\x45\x43\x46\x41\x43\x41\x43\x41\x43\x41\x41\x41\x00\x00\x20\x00\x01\xc0\x0c\x00\x20\x00\x01\x00\x00\x03\x84\x00\x06\x60\x00\x8c\xe9\xaa\x7e
+            - as a server, cannot bind because it has been taken
+        - port 138
+            - as a client, could not get any messages
+            - as a server, cannot bind because it has been taken
+    - unix sockets
+        - launchd had 38 open UNIX sockets
+            - almost all of them are named
+            - /private//var/run/syslog
+                - datagram
+            - /private/var/run/cupsd
+                - returns after a few seconds
+            - /var/run/vpncontrol.sock
+                - needed sudo
+            - /var/run/mDNSResponder
+*           - /var/run/portmap.socket
+                - sent a null byte (\x00) 
+        - the named socket is the server, so in a normal architecture, we need
+            to send it a message first for it to reply

@@ -1,0 +1,17 @@
+- open connections
+    - no named pipes
+    - 2 ports listening over TCP (not established Internet connections)
+        - 57621 and 57819
+        - As client or as server, could not get any messages
+    - 3 ports listening over UDP
+        - 1900 and 62152 could not get any messages
+*       - 57621 sends a `heartbeat' message on broadcast over loopback and 
+            networked interface
+            - does not seem to be fruitful
+            - with some fuzzing, could not make Spotify crash
+    - 11 open ends of UNIX domain sockets
+        - 8 within the Spotify processes are socketpair sockets
+        - 1 connected to named launchd/syslogd endpoint (/private//var/run/syslogd)
+            - this one is a datagram socket
+        - 2 connected to named mDNSResponder endpoint
+            - as a client, did not get any responses

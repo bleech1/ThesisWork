@@ -3,14 +3,14 @@
 import socket
 import subprocess
 import os
+import time
 
 
 TCP_IP = "127.0.0.1"
-UDP_PORT = 57621
 PROCESS_NAME = "Spotify"
 OUTPUT_FILE = "spotifyTcp.txt"
 PATH_TO_APP = "/Applications/Spotify.app/Contents/MacOS/Spotify"
-NUM_RUNS = 1000000
+NUM_RUNS = 500000
 RECV_SIZE = 1024
 
 # need to build the packet together because some parts don't change
@@ -30,13 +30,16 @@ def Main():
     global numTests
 
     StartApp()
+    port = int(FindPort())
+
+    # create the socket and connect
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.connect((TCP_IP, port))
 
     for i in range(NUM_RUNS):
+        print(port)
+        #time.sleep(100)
         try:
-            # create the socket and connect
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            sock.connect((TCP_IP, UDP_PORT))
-
             # get the random pieces using radamsa
             proc1 = subprocess.Popen(["echo", FIRST_RANDOM], stdout = subprocess.PIPE)
             proc2 = subprocess.Popen(["../../radamsa/bin/radamsa"], stdin = proc1.stdout, stdout = subprocess.PIPE)
@@ -61,17 +64,47 @@ def Main():
                 crashingInput.append(" ".join(x.encode("hex") for x in randomPacket))
                 numCrashes += 1
                 StartApp()
+                port = int(FindPort())
+                # create the socket and connect
+                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                sock.connect((TCP_IP, port))
             numTests += 1
             print(i)
         except KeyboardInterrupt:
             Clean()
+        """
         except Exception as e:
             print("Exception: " + str(e))
-            Clean()
+            port = int(FindPort())
+            # create the socket and connect
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.connect((TCP_IP, port))
+        """
     Clean()
 
 def StartApp():
     subprocess.Popen([PATH_TO_APP, "&"])
+
+def FindPort():
+    proc1 = subprocess.Popen(["lsof", "-i", "tcp", "+c", "0"], stdout = subprocess.PIPE)
+    proc2 = subprocess.Popen(["grep", PROCESS_NAME], stdin = proc1.stdout, stdout = subprocess.PIPE)
+    processes, error = proc2.communicate()
+    processes = processes.decode("utf-8")
+    processes = processes.split("\n")
+    for line in processes:
+        # ignore established connections (Internet, not local)
+        if "ESTABLISHED" in line:
+            continue
+        # ignore line of port 57621, that's the wrong port
+        if "57621" in line:
+            continue
+        colon = line.find(":")
+        port = line[colon + 1 : ]
+        paren = port.find("(")
+        port = port[ : paren - 1]
+        if port.isnumeric():
+            return port
+    return None
 
 def CheckIfAlive(procName):
     proc1 = subprocess.Popen(["lsof", "-i", "tcp", "+c", "0"], stdout = subprocess.PIPE)

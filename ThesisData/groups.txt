@@ -63,6 +63,7 @@ firefox
 
 CODE
 Code\x20Helper
+Electron
 
 ATOM
 Atom

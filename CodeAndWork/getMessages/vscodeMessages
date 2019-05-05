@@ -1,0 +1,25 @@
+- open connections
+    - no named pipes
+    - 1 port listening over TCP for each open window (not tab)
+        - port is randomly assigned so can't find out what it is
+        - can't find any messages on it
+        - says it looks for a WebSockets request
+*       - sent HTTP GET request for /bleech1/ThesisWork from www.github.com
+            - ACKed but no response
+    - no udp
+    - UNIX domain sockets
+        - named at /Users/Bleecher/Library/Application Support/Code/1.33.1-main.sock
+*           - When client, got this sent (only when app closing)
+                58 c1 87 d0 ff 7f  (only when I quit)
+*           - When server, created socket and tried to open Code, said that
+                instance was already running so could not be opened
+        - named at /Users/Bleecher/Library/Application Support/Code/1.33.1-shared.sock
+            - When client, did not get anything sent to it
+*           - When server, got this when application started
+                01 00 00 00 00 00 00 00 00 00 00 00 05 01 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 0e 04 00 00 00 01 05 00 00 00 03 32 30 30 00 
+        - named at /var/folders/th/3_4wg0x53w7_01g6m_2fd5rr0000gn/T/vscode-git-askpass-4469fc929a0ef03330f51084a22af104936
+            - When client, did not receive anything in response
+            - When server, last part is random so cannot know what to make
+        - named at /var/folders/th/3_4wg0x53w7_01g6m_2fd5rr0000gn/T/vscode-ipc-9c8fb678-9274-432a-8871-632644b4874c.sock
+            - When client, says "No such file or directory"
+            - When server, did not receive anything

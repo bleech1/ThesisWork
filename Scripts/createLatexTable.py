@@ -1,7 +1,7 @@
 #!/bin/python
 
 NUM_COLS = 7
-INPUT_FILE = "grouped_results.txt"
+INPUT_FILE = "../ThesisData/grouped_results.txt"
 OUTPUT_FILE = "../ThesisPaper/latexTable.txt"
 
 with open(INPUT_FILE, "r") as inFile:

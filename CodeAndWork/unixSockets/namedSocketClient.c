@@ -36,8 +36,10 @@ int main(int argc, char *argv[])
 
     int bytesRead = 10;
     char buf[100];
+    int bytesRecv;
     while (bytesRead > 0)
     {
+        memset(buf, 0, 100);
         bytesRead = read(0, buf, 100);
         if (bytesRead < 0)
         {
@@ -50,6 +52,14 @@ int main(int argc, char *argv[])
             perror("send");
             exit(1);
         }
+        bytesRecv = recv(sockFd, buf, 100, 0);
+        if (bytesRecv < 0)
+        {
+            perror("recv");
+            exit(1);
+        }
+        printf("received: %s\n", buf);
+        
     }
 
 }

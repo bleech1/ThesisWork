@@ -5,7 +5,7 @@ import subprocess
 import os
 
 
-SOCK_PATH = "/var/folders/th/3_4wg0x53w7_01g6m_2fd5rr0000gn/T/vscode-git-askpass-528a603961adff57750d3a5ace9906d13f3"
+SOCK_PATH = "/var/folders/th/3_4wg0x53w7_01g6m_2fd5rr0000gn/T/vscode-git-askpass-f34746039da54e3b11eb40831aeb4cc1296"
 PROCESS_NAME = "Code"
 OUTPUT_FILE = "codeUnixGitFuzzing.txt"
 PATH_TO_APP = "/Users/Bleecher/Applications/Visual Studio Code.app/Contents/MacOS/Electron"
