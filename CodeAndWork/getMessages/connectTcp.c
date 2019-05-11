@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
             perror("read");
             exit(1);
         }
-        printf("mesage: %s\n", buf);
+        printf("Message Received: %s\n", buf);
         PrintHex(buf, bytesRead);
     }
 
@@ -84,6 +84,7 @@ void Usage()
 
 void PrintHex(char *str, int len)
 {
+    printf("Hex: ");
     char *temp = str;
     for (int i = 0; i < len; i ++)
     {
